@@ -1,0 +1,11 @@
+%h1 entire conversation
+- @client.api.account.messages.list.each do |i|
+  %p
+    = i.inspect
+
+%hr
+
+%h1 just inbound
+- @client.api.account.messages.list(from: "+1#{@person_phone_number}").each do |i|
+  %p
+    = i.inspect
